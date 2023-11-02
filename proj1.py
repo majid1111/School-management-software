@@ -17,43 +17,59 @@ class Student:
            fg = 'WHITE'          
                       )
         title.pack(fill=X)
+        #--------------  variable  -----------
+
+        self.id_var = StringVar()
+        self.name_var = StringVar()
+        self.email_var = StringVar()
+        self.phone_var = StringVar()
+        self.moahel_var = StringVar()
+        self.gender_var = StringVar()
+        self.address_var = StringVar()
+        self.del_var = StringVar
+        self.search_var = StringVar()
+
+
+
+
+
 #-----------------ادوات التحكم بالبرنامج-------------
         Manage_Frame = Frame(self.root,bg='white')
         Manage_Frame.place(x=1137,y=30,width=210,height=400)
         lb1_ID = Label(Manage_Frame,text='الرقم التسلسلي',bg='white')
         lb1_ID.pack()
-        ID_Entery = Entry(Manage_Frame,bd=2,justify='center')
+        ID_Entery = Entry(Manage_Frame,textvariable=self.id_var,bd=2,justify='center')
         ID_Entery.pack()
         lb1_Name = Label(Manage_Frame,text='اسم الطالب',bg='white')
         lb1_Name.pack()
-        Name_Entery = Entry(Manage_Frame,bd=2,justify='center')
+        Name_Entery = Entry(Manage_Frame,textvariable= self.name_var,bd=2,justify='center')
         Name_Entery.pack()
         lb1_email = Label(Manage_Frame,text='ايميل الطالب',bg='white')
         lb1_email.pack()
-        email_Entery = Entry(Manage_Frame,bd=2,justify='center')
+        email_Entery = Entry(Manage_Frame,textvariable=self.email_var,bd=2,justify='center')
         email_Entery.pack()
         lb1_phone = Label(Manage_Frame,text='هاتف الطالب',bg='white')
         lb1_phone.pack()
-        phone_Entery = Entry(Manage_Frame,bd=2,justify='center')
+        phone_Entery = Entry(Manage_Frame,textvariable=self.phone_var,bd=2,justify='center')
         phone_Entery.pack()
         lb1_certi = Label(Manage_Frame,text='موهلات الطالب',bg='white')
         lb1_certi.pack()
-        certi_Entery = Entry(Manage_Frame,bd=2,justify='center')
+        certi_Entery = Entry(Manage_Frame,textvariable=self.moahel_var,bd=2,justify='center')
         certi_Entery.pack()
         lbl_gender = Label(Manage_Frame,text='جنس الطالب',bg='white')
         lbl_gender.pack()
-        combo_gender = ttk.Combobox(Manage_Frame)
+        combo_gender = ttk.Combobox(Manage_Frame,textvariable=self.gender_var)
         combo_gender['value']=('ذكر','انثى')
         combo_gender.pack()
 
         lb1_address = Label(Manage_Frame,text='عنوان الطالب',bg='white')
         lb1_address.pack()
-        address_Entery = Entry(Manage_Frame,bd=2,justify='center')
+        address_Entery = Entry(Manage_Frame,textvariable= self.address_var,bd=2,justify='center')
         address_Entery.pack()
         
         lb1_delete = Label(Manage_Frame,text='حذف طالب بالاسم ',bg='white',fg='red')
         lb1_delete.pack()
-        delete_Entery = Entry(Manage_Frame,bd=2,justify='center')
+        delete_Entery = Entry(Manage_Frame,textvariable= self.del_var,bd=2,justify='center')
         delete_Entery.pack()
 
 #----------- الازرار buttons-------------
@@ -92,7 +108,7 @@ class Student:
         combo_search['value']=('id','name','email','phone')
         combo_search.place(x=880,y=12)
 
-        search_Entery = Entry(search_Frame,justify='right',bd=2)
+        search_Entery = Entry(search_Frame,textvariable=self.search_var,justify='right',bd=2)
         search_Entery.place(x=680,y=12)
 
 
